@@ -1,4 +1,4 @@
-import logo from "./assets/img/sushi-logo.svg";
+import logo from "../assets/img/sushi-logo.svg";
 import Button from "./Button"
 
 const Header = (props) => {
