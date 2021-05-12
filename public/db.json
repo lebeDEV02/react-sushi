@@ -1,0 +1,84 @@
+{
+  "sushi": [
+    {
+      "id": 0,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/fieb-280x186.jpg",
+      "name": "Фила - Эби ролл",
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/spxk-280x186.jpg",
+      "name": "Спайси ролл с Копченым Лососем",
+      "price": 245,
+      "category": 1,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/vkunj-280x186.jpg",
+      "name": "Ролл в кунжуте",
+      "price": 295,
+      "category": 1,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/mon-280x186.jpg",
+      "name": "Монако ролл",
+      "price": 375,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/novo-280x186.jpg",
+      "name": "Novo ролл",
+      "price": 415,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/catalog/products/Kabayaki-280x186.jpg",
+      "name": "Kabayaki ролл",
+      "price": 580,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/data/IMG_6631-280x186.jpg",
+      "name": "LOVE Ролл",
+      "price": 675,
+      "category": 1,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/data/3-280x186.jpg",
+      "name": "Ланч Ролл",
+      "price": 450,
+      "category": 4,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/data/firm-roll/g0lBBvAZGSo-280x186.jpg",
+      "name": "Ролл Азия с лососем",
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://vkusnyesushi.moscow/image/cache/data/firm-roll/roll-florida-280x186.jpg",
+      "name": "Ролл Флорида",
+      "price": 285,
+      "category": 5,
+      "rating": 7
+    }
+  ]
+}
