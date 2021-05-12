@@ -8,8 +8,12 @@
 
     svg {
       margin-right: 8px;
+		transition: all .3s;
+		transform: rotate(180deg);
+			 &.rotated{
+		transform: rotate(0deg);
+	 }
     }
-
     b {
       margin-right: 8px;
     }
@@ -20,7 +24,6 @@
       cursor: pointer;
     }
   }
-
   &__popup {
     position: absolute;
     right: 0;
@@ -31,7 +34,7 @@
     overflow: hidden;
     padding: 10px 0;
     width: 160px;
-
+	
     ul {
       overflow: hidden;
       li {

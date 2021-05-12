@@ -1,17 +1,21 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/img/sushi-logo.svg";
 import Button from "./Button"
 
-const Header = (props) => {
+const Header = () => {
 	return ( 
 		<div className="header">
         <div className="container">
-          <div className="header__logo">
-            <img width="38" src={logo} alt="Sushi logo" />
-            <div>
-              <h1>React Sushi</h1>
-              <p>Лучшие суши. Всегда</p>
-            </div>
-          </div>
+          <Link to="/">
+          	<div className="header__logo">
+	            <img width="38" src={logo} alt="Sushi logo" />
+	            <div>
+	              <h1>React Sushi</h1>
+	              <p>Лучшие суши. Всегда</p>
+	            </div>
+	          </div>
+          </Link>
+			 <Link to="/cart">
           <div className="header__cart">
 				 <Button className="button--cart">
               <span>520 ₽</span>
@@ -48,6 +52,7 @@ const Header = (props) => {
               <span>3</span>
 				  </Button>
           </div>
+			 </Link>
         </div>
       </div>
 	 );
