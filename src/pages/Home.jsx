@@ -2,17 +2,29 @@ import React from 'react'
 import {Categories, SortPopup, SushiBlock} from "../components"
 import {useSelector, useDispatch} from "react-redux";
 import {setCategoryBy, setSortBy} from "../redux/actions/filters"
+import {fetchSushi} from "../redux/actions/sushi"
+
 function Home() {
+	const dispatch = useDispatch();
+
+
 	const sushiArr = ['Сеты','Вегетарианские','Горячие','Острые']
 	const sortItems = [{name: 'популярности', type: 'popular'},{name: 'цене', type: 'price'}, {name: 'алфавиту', type: 'alphabet'}]
+
+
+		React.useEffect(()=>{
+		dispatch(fetchSushi())
+	},[]);
+
+
 		const {items} = useSelector(({sushi}) => {
 		return{
 			items: sushi.items,
 			filters: sushi.filters
 		}
 	})
-	const dispatch = useDispatch();
 
+	
 	const onSelectCategory = React.useCallback((item) => {
 		dispatch(setCategoryBy(item))
 	})
