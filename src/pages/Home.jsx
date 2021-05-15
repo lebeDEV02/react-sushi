@@ -1,28 +1,24 @@
 import React from 'react'
-import {Categories, SortPopup, SushiBlock} from "../components"
+import {Categories, SortPopup, SushiBlock, SushiPlaceholder} from "../components"
 import {useSelector, useDispatch} from "react-redux";
 import {setCategoryBy, setSortBy} from "../redux/actions/filters"
 import {fetchSushi} from "../redux/actions/sushi"
 
 function Home() {
 	const dispatch = useDispatch();
-
+			const items = useSelector(({sushi}) => sushi.items);
+			const isLoaded = useSelector(({sushi}) => sushi.isLoaded);
 
 	const sushiArr = ['Сеты','Вегетарианские','Горячие','Острые']
 	const sortItems = [{name: 'популярности', type: 'popular'},{name: 'цене', type: 'price'}, {name: 'алфавиту', type: 'alphabet'}]
 
-
 		React.useEffect(()=>{
-		dispatch(fetchSushi())
+			if(!items.length){
+				dispatch(fetchSushi())
+			}
 	},[]);
 
 
-		const {items} = useSelector(({sushi}) => {
-		return{
-			items: sushi.items,
-			filters: sushi.filters
-		}
-	})
 
 	
 	const onSelectCategory = React.useCallback((item) => {
@@ -36,9 +32,9 @@ function Home() {
           </div>
           <h2 className="content__title">Все</h2>
           <div className="content__items">
-				{items && items.map(item => 
+				{isLoaded ? items.map(item => 
 					(<SushiBlock key={item.id} name={item.name} img={item.imageUrl} price={item.price}></SushiBlock>)
-				)}
+				) : Array(10).fill(<SushiPlaceholder></SushiPlaceholder>)}
             </div>
         </div>
 	)
