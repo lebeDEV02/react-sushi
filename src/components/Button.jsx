@@ -5,7 +5,7 @@ const Button = ({onClick, className, outline, children}) => {
 	return ( 
 		<button onClick={onClick}
 		className={classNames('button',className,{
-			'button-outline': outline
+			'button--outline': outline
 		})}
 		>
 			{children}

@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from "prop-types"
-function SushiBlock({ name, img, price }) {
+import Button from '../Button'
+function SushiBlock({ name, price, onAddSushi, img, id, addedSushiCounter}) {
+	const handleAddSushi = () => {
+		onAddSushi({ name, price, id, img})
+	}
 	return (
 		<div className="sushi-block">
 			<img
@@ -12,7 +16,7 @@ function SushiBlock({ name, img, price }) {
 
 			<div className="sushi-block__bottom">
 				<div className="sushi-block__price">{price} ₽</div>
-				<div className="button button--outline button--add">
+				<Button onClick={handleAddSushi} className="button--add" outline>
 					<svg
 						width="12"
 						height="12"
@@ -26,8 +30,8 @@ function SushiBlock({ name, img, price }) {
 						/>
 					</svg>
 					<span>Добавить</span>
-					<i>2</i>
-				</div>
+					{addedSushiCounter && <i>{addedSushiCounter}</i>}
+				</Button>
 			</div>
 		</div>
 
@@ -38,6 +42,8 @@ SushiBlock.propTypes = {
 	name: PropTypes.string.isRequired,
 	img: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired,
+	onAddSushi: PropTypes.func.isRequired,
+	addedSushiCounter: PropTypes.number
 }
 
 
