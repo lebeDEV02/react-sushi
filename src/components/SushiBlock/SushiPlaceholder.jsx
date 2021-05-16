@@ -4,6 +4,7 @@ import ContentLoader from "react-content-loader"
 function SushiPlaceholder() {
 		return(
 		<ContentLoader 
+		className = "sushi-block"
     speed={2}
     width={280}
     height={286}
