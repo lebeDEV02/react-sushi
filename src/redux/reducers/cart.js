@@ -22,6 +22,18 @@ const cart = (state = initialState, action) => {
 				...state,
 				totalAmount:action.payload,
 			}
+			case 'DECREASE_AMOUNT_OF_SUSHI':
+				return{
+					...state,
+					totalAmount: state.totalAmount - 1,
+					totalPrice: state.totalPrice - action.payload[0].price,
+					totalCount: state.totalCount - 1,
+				}
+			case 'INCREASE_AMOUNT_OF_SUSHI':
+				return{
+					...state,
+					totalAmount: state.totalAmount + 1,
+				}
 			default: 
 			return state;
 	}

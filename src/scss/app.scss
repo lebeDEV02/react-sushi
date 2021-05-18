@@ -112,18 +112,19 @@ body {
     display: flex;
     width: 100%;
     border-top: 1px solid $gray-line;
-    padding-top: 30px;
-    margin-top: 30px;
-
+		&:nth-child(1){
+			padding-top:30px
+		}
     &-img {
       display: flex;
       align-items: center;
       margin-right: 15px;
-      width: 10%;
+      width: 20%;
 
       img {
-        width: 80px;
-        height: 80px;
+        width: 140px;
+        height: 140px;
+		  object-fit: contain
       }
     }
 
@@ -131,7 +132,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40%;
+      width: 30%;
 
       h3 {
         font-weight: bold;

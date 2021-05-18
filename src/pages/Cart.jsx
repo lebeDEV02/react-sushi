@@ -6,10 +6,6 @@ function Cart() {
 
 	const {totalPrice, totalAmount, items} = useSelector(({cart}) => cart)
 
-	const allSushiOrder = Object.keys(items).map(key => {
-		return items[key][0]
-	});
-
 	return (
 		<div className="container">
         <div className="container container--cart">
@@ -34,8 +30,7 @@ function Cart() {
             </div>
             <div className="content__items">
 				{
-					// allSushiOrder.map(obj=><CartItem name={obj.name}></CartItem>)
-					Object.keys(items).map(id=><CartItem id={id} length={items[id]}></CartItem>)
+					Object.keys(items).map(id=><CartItem id={id} sushi={items[id]} totalCount={items[id].length}></CartItem>)
 				}
             </div>
             <div className="cart__bottom">
