@@ -3,11 +3,19 @@ export const addSushiToCart = (sushiObj) => ({
 	payload: sushiObj,
 })
 
-export const decreaseAmountOfPosition = (obj) => ({
+export const decreaseAmountOfSushi = (obj) => ({
 	type: 'DECREASE_AMOUNT_OF_SUSHI',
 	payload: obj
 })
-export const increaseAmountOfPosition = (obj) => ({
+export const increaseAmountOfSushi = (obj) => ({
 	type: 'INCREASE_AMOUNT_OF_SUSHI',
+	payload: obj
+})
+export const deleteAllSushi = () => ({
+	type: 'DELETE_ALL_SUSHI'
+})
+
+export const deleteSelectedSushi = (obj) => ({
+	type: 'DELETE_SELECTED_SUSHI',
 	payload: obj
 })

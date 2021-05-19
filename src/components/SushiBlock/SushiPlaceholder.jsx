@@ -9,7 +9,7 @@ function SushiPlaceholder() {
     width={280}
     height={286}
     viewBox="0 0 280 286"
-    backgroundColor="#f3f3f3"
+    backgroundColor="#ccc"
     foregroundColor="#ecebeb"
   >
     <rect x="0" y="0" rx="0" ry="0" width="280" height="193" /> 

@@ -1,11 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { CartItem } from '../components'
+import { deleteAllSushi } from '../redux/actions/cart'
 
 function Cart() {
-
+	const dispatch = useDispatch();
 	const {totalPrice, totalAmount, items} = useSelector(({cart}) => cart)
-
+	const deleteHandler = () => {
+		const response = window.confirm('Are you sure you want to delete all your order?')
+		if(response) {dispatch(deleteAllSushi())}
+	}
 	return (
 		<div className="container">
         <div className="container container--cart">
@@ -25,12 +30,12 @@ function Cart() {
 <path d="M11.6666 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
-                <span>Очистить корзину</span>
+                <span onClick={deleteHandler}>Очистить корзину</span>
               </div>
             </div>
             <div className="content__items">
 				{
-					Object.keys(items).map(id=><CartItem id={id} sushi={items[id]} totalCount={items[id].length}></CartItem>)
+					Object.keys(items).map(id=><CartItem id={id} sushi={items[id]} totalCount={items[id].length} key={id}></CartItem>)
 				}
             </div>
             <div className="cart__bottom">
@@ -39,13 +44,13 @@ function Cart() {
                 <span> Сумма заказа: <b>{totalPrice}₽</b> </span>
               </div>
               <div className="cart__bottom-buttons">
-                <a href="/" className="button button--outline button--add go-back-btn">
+                <Link to="/" className="button button--outline button--add go-back-btn">
                   <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
                   <span>Вернуться назад</span>
-                </a>
+                </Link>
                 <div className="button pay-btn">
                   <span>Оплатить сейчас</span>
                 </div>
