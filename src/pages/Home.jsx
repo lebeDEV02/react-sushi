@@ -12,7 +12,7 @@ function Home() {
 	const {category, sortBy} = useSelector(({filters}) => filters)
 	const sushiItems = useSelector(({cart}) => cart.items)
 
-	const sushiArr = ['Сеты','Вегетарианские','Горячие','Острые']
+	const sushiArr = ['С сливочным сыром','Новинки','Горячие','Острые']
 	const sortItems = [{name: 'популярности', type: 'rating',order:'desc'},{name: 'цене', type: 'price',order:'desc'}, {name: 'алфавиту', type: 'name',order:'asc'}]
 		React.useEffect(()=>{
 				dispatch(fetchSushi(sortBy,category))
